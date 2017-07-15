@@ -1,22 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="me.austinatchley.travice" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Travice</name>
+<widget id="me.austinatchley.blank" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>Blank</name>
     <description>
-        A basic Framework7 Media App for PhoneGap.
+        A blank PhoneGap app.
     </description>
-    <author email="tommy@devgeeks.org" href="http://phonegap.com">
-        Adobe PhoneGap Team
+    <author email="support@phonegap.com" href="http://phonegap.com">
+        PhoneGap Team
     </author>
     <content src="index.html" />
     <access origin="*" />
-    <allow-intent href="http://*/*" />
-    <allow-intent href="https://*/*" />
-    <allow-intent href="tel:*" />
-    <allow-intent href="sms:*" />
-    <allow-intent href="mailto:*" />
-    <allow-intent href="geo:*" />
-    <preference name="DisallowOverscroll" value="true" />
-    <preference name="StatusBarStyle" value="default" />
-    <preference name="FadeSplashScreenDuration" value="300" />
-    <preference name="phonegap-version" value="cli-6.1.0" />
 </widget>
