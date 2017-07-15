@@ -2,12 +2,15 @@
     background-color: #FF9A17;
     color: #fff;
     font-family: sans-serif;
+    min-height: 600px;
+    overflow: hidden;
+    
     h1 {
         text-align: center;
         margin-top: 100px;
     }
     button {
-        position: absolute;
+        position: fixed;
         bottom: 100px;
         left: 50%;
         transform: translateX(-50%);
@@ -24,12 +27,13 @@
 }
 
 .loginContainer {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 300px;
     input {
+        padding: 6px;
         width: 100%;
         height: 35px;
         border-radius: 4px;

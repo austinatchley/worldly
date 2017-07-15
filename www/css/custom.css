@@ -1,9 +1,7 @@
 .login {
   background-color: #FF9A17;
   color: #fff;
-  font-family: sans-serif;
-  min-height: 600px;
-  overflow: hidden; }
+  font-family: sans-serif; }
   .login h1 {
     text-align: center;
     margin-top: 100px; }
@@ -28,7 +26,6 @@
   transform: translate(-50%, -50%);
   width: 300px; }
   .loginContainer input {
-    padding: 6px;
     width: 100%;
     height: 35px;
     border-radius: 4px; }
@@ -49,5 +46,24 @@
   border-radius: 50%;
   height: 25px;
   width: auto; }
+
+.item-content {
+  color: #000;
+}
+
+.sign-in {
+  color: #000;
+  font-family: sans-serif; }
+  .sign-in button {
+    position: relative;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
+    border-radius: 4px;
+    color: #000;
+    background-color: transparent;
+    border: none;
+    height: 50px; }
 
 /*# sourceMappingURL=custom.css.map */
