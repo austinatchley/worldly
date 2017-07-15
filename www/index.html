@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--
+    Customize this policy to fit your own app's needs. For more guidance, see:
+      https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+    Some notes:
+      * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+      * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+      * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+    -->
+  <!-- Removing 'unsafe-eval'. If needed, I will figure out a way around it -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com https://api.spotify.com 'unsafe-eval' 'unsafe-inline' ws://*; style-src 'self' 'unsafe-inline'; media-src *; img-src * data:">
+
+  <!-- Required meta tags-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <link rel="stylesheet" href="lib/font-awesome-4.5.0/css/font-awesome.min.css" />
+
+  <title>Star Track</title>
+</head>
+
+<body class="theme-green">
+  <!-- Status bar overlay for full screen mode (PhoneGap) -->
+  <div class="statusbar-overlay"></div>
+
+  <!-- Panels overlay-->
+  <div class="panel-overlay"></div>
+  <!-- Left panel with cover effect-->
+  <div class="panel panel-left panel-cover">
+    <!--<div class="content-block">-->
+    <div class="content-block-title">Menu</div>
+    <div class="list-block">
+      <ul>
+        <li>
+          <a href="#" class="search-link item-content list-panel-all close-panel item-link">
+            <div class="item-inner">
+              <div class="item-title">Search</div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="favorites-link item-content list-panel-all close-panel item-link">
+            <div class="item-inner">
+              <div class="item-title">Favorites</div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Views -->
+  <div class="views">
+    <!-- Your main view, should have "view-main" class -->
+    <div class="view view-main">
+      <!-- Top Navbar-->
+      <div class="navbar">
+        <div class="navbar-inner" data-page="index">
+          <div class="left">
+            <!--
+              Left link contains only icon - additional "icon-only" class
+              Additional "open-panel" class tells app to open panel when we click on this link
+            -->
+            <a href="#" class="link icon-only open-panel"><i class="fa fa-bars"></i></a>
+          </div>
+          <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
+          <div class="center sliding">Search</div>
+        </div>
+      </div>
+      <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+      <div class="pages navbar-through toolbar-through">
+        <!-- Page, "data-page" contains page name -->
+        <div data-page="index" class="page">
+          <!-- Scrollable page content -->
+          <div class="page-content">
+            <form action="#" method="GET" id="search">
+              <div class="content-block-title"></div>
+              <div class="list-block">
+                <ul>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-inner">
+                        <div class="item-input">
+                          <input type="text" name="q"
+                            placeholder="track, artist or album"
+                            autocorrect="off" autocapitalize="off">
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="item-divider">Limit to:</li>
+                  <li>
+                    <label class="label-radio item-content">
+                      <input type="radio" name="filter" value="track">
+                      <div class="item-media">
+                        <i class="icon icon-form-radio"></i>
+                      </div>
+                      <div class="item-inner">
+                        <div class="item-title">Track name</div>
+                      </div>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="label-radio item-content">
+                      <input type="radio" name="filter" value="artist">
+                      <div class="item-media">
+                        <i class="icon icon-form-radio"></i>
+                      </div>
+                      <div class="item-inner">
+                        <div class="item-title">Artist name</div>
+                      </div>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="label-radio item-content">
+                      <input type="radio" name="filter" value="album">
+                      <div class="item-media">
+                        <i class="icon icon-form-radio"></i>
+                      </div>
+                      <div class="item-inner">
+                        <div class="item-title">Album name</div>
+                      </div>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="label-radio item-content">
+                      <!-- Checked by default -->
+                      <input type="radio" name="filter" value="all" checked>
+                      <div class="item-media">
+                        <i class="icon icon-form-radio"></i>
+                      </div>
+                      <div class="item-inner">
+                        <div class="item-title">All of the above</div>
+                      </div>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+              <input type="hidden" name="limit" value="25" />
+              <div class="content-block">
+                <input type="submit" class="button button-big button-fill search-submit" value="Find Tracks" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/template7" id="results">
+    <!-- Dynamic navbar for iOS theme -->
+    {{#if @global.ios}}
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left sliding">
+                <a href="#" class="back link">
+                  <i class="icon icon-back"></i>
+                  <span>Search</span>
+                </a>
+            </div>
+            <div class="center sliding">Results</div>
+        </div>
+    </div>
+    {{/if}}
+
+    <div class="page" data-page="results">
+        <!-- Fixed navbar for Material theme -->
+        {{#if @global.material}}
+        <div class="navbar">
+            <div class="navbar-inner">
+              <div class="left">
+                <a href="#" class="back link"><i class="icon icon-back"></i></a>
+              </div>
+              <div class="center">Results</div>
+            </div>
+        </div>
+        {{/if}}
+
+        <div class="page-content">
+          <div class="content-block-title">{{tracks.count}} tracks returned</div>
+          <div class="list-block media-list">
+            <ul>
+              {{#each tracks.items}}
+              <li>
+                <a href="#" class="item-link item-content"
+                  data-item="{{@index}}"
+                  data-context="{{stringify this}}"
+                  data-template="details"
+                >
+                  <div class="item-media">
+                    <img width="80" src="{{this.album.images[0].url}}">
+                  </div>
+                  <div class="item-inner">
+                    <div class="item-title-row">
+                      <div class="item-title">{{this.name}}</div>
+                      <div class="item-after">{{durationFromMs this.duration_ms}}</div>
+                    </div>
+                    <div class="item-subtitle">{{this.artists[0].name}}</div>
+                    <div class="item-text">{{this.album.name}}</div>
+                  </div>
+                </a>
+              </li>
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+    </div>
+  </script>
+
+  <script type="text/template7" id="details">
+    <!-- Dynamic navbar for iOS theme -->
+    {{#if @global.ios}}
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="left sliding">
+          <a href="#" class="back link">
+            <i class="icon icon-back"></i>
+              <span>Results</span>
+          </a>
+        </div>
+        <div class="center sliding">Track details</div>
+        <div class="right">
+          <a href="#" class="link star">
+            <i class="fa fa-star-o"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    {{/if}}
+
+    <div class="page" data-page="details">
+        <!-- Fixed navbar for Material theme -->
+        {{#if @global.material}}
+        <div class="navbar">
+            <div class="navbar-inner">
+              <div class="left">
+                <a href="#" class="back link"><i class="icon icon-back"></i></a>
+              </div>
+              <div class="center">Track details</div>
+              <div class="right">
+                <a href="#" class="link star">
+                  <i class="fa fa-star-o"></i>
+                </a>
+              </div>
+            </div>
+        </div>
+        {{/if}}
+
+        <div class="page-content">
+          <div class="card">
+            <div class="card-header no-border no-padding">
+              <img src="{{this.album.images[0].url}}" width="100%" />
+            </div>
+            <div class="card-content">
+              <div class="card-content-inner">
+                <div class="track-name">{{this.name}}</div>
+                <div class="artists-name">by {{this.artists[0].name}}</div>
+                <div class="album-title">{{this.album.name}}</div>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="card-content-inner preview">
+                <div class="playback-controls">
+                  <a class="play-button play displayed" href="#">
+                    <div class="arrow-right play"></div>
+                  </a>
+                  <a class="pending-button pending" href="#">
+                    <span class="preloader pending"></span>
+                  </a>
+                  <a class="stop-button stop" href="#">
+                    <div class="square stop"></div>
+                  </a>
+                  <div class="duration">
+                    <span data-progress="0" class="progressbar"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer">
+              <div>Track duration</div>
+              <div>{{durationFromMs this.duration_ms}}</div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </script>
+
+  <script type="text/template7" id="favorites">
+    <!-- Dynamic navbar for iOS theme -->
+    {{#if @global.ios}}
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="left">
+          <a href="#" class="link icon-only open-panel"><i class="fa fa-bars"></i></a>
+        </div>
+        <div class="center sliding">Favorites</div>
+      </div>
+    </div>
+    {{/if}}
+
+    <div class="page" data-page="favorites">
+        <!-- Fixed navbar for Material theme -->
+        {{#if @global.material}}
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="left">
+                <a href="#" class="link icon-only open-panel"><i class="fa fa-bars"></i></a>
+              </div>
+            <div class="center sliding">Favorites</div>
+          </div>
+        </div>
+        {{/if}}
+
+        <div class="page-content">
+          {{#if tracks}}
+          <div class="content-block-title">Tracks</div>
+          <div class="list-block media-list">
+            <ul>
+              {{#each tracks}}
+              <li>
+                <a href="#" class="item-link item-content"
+                  data-item="{{@index}}"
+                  data-context="{{stringify this}}"
+                  data-template="details"
+                >
+                  <div class="item-media">
+                    <img width="80" src="{{this.album.images[0].url}}">
+                  </div>
+                  <div class="item-inner">
+                    <div class="item-title-row">
+                      <div class="item-title">{{this.name}}</div>
+                      <div class="item-after">{{durationFromMs this.duration_ms}}</div>
+                    </div>
+                    <div class="item-subtitle">{{this.artists[0].name}}</div>
+                    <div class="item-text">{{this.album.name}}</div>
+                  </div>
+                </a>
+              </li>
+              {{/each}}
+            </ul>
+          </div>
+          {{else}}
+          <div class="content-block">
+            <p>You haven't favorited any tracks! Use the search function and add some to favorites.</p>
+          </div>
+          {{/if}}
+        </div>
+    </div>
+  </script>
+
+  <script type="text/javascript" src="cordova.js"></script>
+  <script type="text/javascript" src="lib/MSOpenTech/winstore-jscompat.js"></script>
+  <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+  <script type="text/javascript" src="js/init-styles.js"></script>
+  <script type="text/javascript" src="js/my-app.js"></script>
+</body>
+
+</html>
