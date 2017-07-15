@@ -45,5 +45,21 @@ $$(document).on('deviceready', function() {
 // Option 1. Using page callback for page (for "about" page in this case) (recommended way):
 myApp.onPageInit('about', function (page) {
     // Do something here for "about" page
-    myApp.alert('init', 'About');
+    
+})
+
+// Option 2. Using one 'pageInit' event handler for all pages:
+$$(document).on('pageInit', function (e) {
+    // Get page data from event data
+    var page = e.detail.page;
+    if (page.name === 'about') {
+        // Following code will be executed for page with data-page attribute equal to "about"
+        myApp.alert('Here comes About page');
+    }
+})
+
+// Option 2. Using live 'pageInit' event handlers for each page
+$$(document).on('pageInit', '.page[data-page="about"]', function (e) {
+    // Following code will be executed for page with data-page attribute equal to "about"
+    myApp.alert('Here comes About page');
 })

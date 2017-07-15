@@ -1,6 +1,15 @@
+<!DOCTYPE html>
 <html>
-
 <head>
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
 
     <!-- Required meta tags-->
@@ -14,41 +23,153 @@
     <!-- Your app title -->
     <title>Travice</title>
 
+    <!-- This template defaults to the iOS CSS theme. To support both iOS and material design themes, see the Framework7 Tutorial at the link below:
+        http://www.idangero.us/framework7/tutorials/maintain-both-ios-and-material-themes-in-single-app.html
+     -->
+
     <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
     <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
-    <link rel="stylesheet" href="css/custom.css">
+        <link rel="stylesheet" href="css/custom.css">
+
 
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body class="login">
-    <h1>TripVice</h1>
-    <form>
-        <div class="list-block">
-          <ul>
-            <li class="item-content">
-              <div class="item-inner">
-                <div class="item-title label">Username</div>
-                <div class="item-input">
-                  <input type="text" name="username" placeholder="Your username">
-                </div>
-              </div>
-            </li>
-            <li class="item-content">
-              <div class="item-inner">
-                <div class="item-title label">Password</div>
-                <div class="item-input">
-                  <input type="password" name="password" placeholder="Your password">
-                </div>
-              </div>
-            </li>
-          </ul>
+<body>
+    <!-- Status bar overlay for full screen mode (PhoneGap) -->
+    <div class="statusbar-overlay"></div>
+
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-right panel-reveal">
+        <div class="content-block">
+            <img class="profilePicture" href="img/matt.jpg">
+            <p>Matt<br>
+            32/196 countries<br>
+            16% world<br>
+            Where you've been<br>
+            Want to go</p>
         </div>
-    </form>
-    <div class="sign-in">
-        <a href="template.html"><button><h2>Sign In</h2></button></a>
     </div>
-    <a href="template.html"><button><h2>Login with Facebook</h2></button></a>
+
+    <!-- Views -->
+    <div class="views">
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main">
+            <!-- Top Navbar-->
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
+                    <div class="center sliding">Travice</div>
+                    <div class="right">
+                        <!--
+                          Right link contains only icon - additional "icon-only" class
+                          Additional "open-panel" class tells app to open panel when we click on this link
+                        -->
+                        <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+            <div class="pages navbar-through toolbar-through">
+                <!-- Page, "data-page" contains page name -->
+                <div data-page="index" class="page">
+                    <!-- Scrollable page content -->
+                    <div class="page-content">
+                        <div class="content-block">
+                            <p>
+
+<style>
+  .facebook-card .card-header {
+    display: block;
+    padding: 10px;
+  }
+  .facebook-card .facebook-avatar {
+    float: left;
+  }
+  .facebook-card .facebook-name {
+    margin-left: 44px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .facebook-card .facebook-date {
+    margin-left: 44px;
+    font-size: 13px;
+    color: #8e8e93;
+  }
+  .facebook-card .card-footer {
+    background: #fafafa;
+  }
+  .facebook-card .card-footer a {
+    color: #81848b;
+    font-weight: 500;
+  }
+  .facebook-card .card-content img {
+    display: block;
+  }
+  .facebook-card .card-content-inner {
+    padding: 15px 10px;
+  }  
+</style>
+ 
+
+ 
+<div class="card facebook-card">
+  <div class="card-header no-border">
+    <div class="facebook-avatar"><img src="..." width="34" height="34"></div>
+    <div class="facebook-name">John Doe</div>
+    <div class="facebook-date">Monday at 3:47 PM</div>
+  </div>
+  <div class="card-content"><img src="..." width="100%"></div>
+  <div class="card-footer no-border">
+    <a href="#" class="link">Like</a>
+    <a href="#" class="link">Comment</a>
+    <a href="#" class="link">Share</a>
+  </div>
+</div>
+ 
+<div class="card facebook-card">
+  <div class="card-header">
+    <div class="facebook-avatar"><img src="..." width="34" height="34"></div>
+    <div class="facebook-name">John Doe</div>
+    <div class="facebook-date">Monday at 2:15 PM</div>
+  </div>
+  <div class="card-content">
+    <div class="card-content-inner">
+      <p>What a nice photo i took yesterday!</p>
+      <img src="..." width="100%">
+      <p class="color-gray">Likes: 112    Comments: 43</p>
+    </div>
+  </div>
+  <div class="card-footer">
+    <a href="#" class="link">Like</a>
+    <a href="#" class="link">Comment</a>
+    <a href="#" class="link">Share</a>
+  </div>
+</div>   
+                            </p>
+                            <!-- Link to another page -->
+                            <a href="about.html">About Travice</a><br>
+                            <a href="login.html">Login</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom Toolbar-->
+            <div class="toolbar">
+                <div class="toolbar-inner">
+                    <!-- Toolbar links -->
+                    <a href="#" class="link">Friends</a>
+                    <a href="#" class="link">Settings</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
 </body>
 
 </html>
