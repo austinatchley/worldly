@@ -33,4 +33,13 @@
     margin: 24px 0 12px 24px;
     float: right; }
 
+.fullMap .horizTopbar {
+  height: 40px;
+  transform: rotate(90deg);
+  width: 100%;
+  background-color: #FF9A17; }
+.fullMap img {
+  height: 100%;
+  width: auto; }
+
 /*# sourceMappingURL=custom.css.map */

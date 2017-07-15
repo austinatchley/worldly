@@ -39,3 +39,17 @@
         float: right;
     }
 }
+
+.fullMap {
+    .horizTopbar {
+        height: 40px;
+        transform: rotate(90deg);
+        width: 100%;
+         background-color:#FF9A17;
+    }
+    img {
+       
+        height: 100%;
+        width: auto;
+    }
+}
