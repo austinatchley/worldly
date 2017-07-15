@@ -33,4 +33,49 @@
     margin: 24px 0 12px 24px;
     float: right; }
 
+.fullMap .horizTopbar {
+  height: 40px;
+  transform: rotate(90deg);
+  width: 100%;
+  background-color: #FF9A17; }
+.fullMap img {
+  height: 100%;
+  width: auto; }
+
+.profilePicture {
+  border-radius: 50%;
+  height: 25px;
+  width: auto; }
+
+    .facebook-card .card-header {
+    display: block;
+    padding: 10px;
+  }
+  .facebook-card .facebook-avatar {
+    float: left;
+  }
+  .facebook-card .facebook-name {
+    margin-left: 44px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .facebook-card .facebook-date {
+    margin-left: 44px;
+    font-size: 13px;
+    color: #8e8e93;
+  }
+  .facebook-card .card-footer {
+    background: #fafafa;
+  }
+  .facebook-card .card-footer a {
+    color: #81848b;
+    font-weight: 500;
+  }
+  .facebook-card .card-content img {
+    display: block;
+  }
+  .facebook-card .card-content-inner {
+    padding: 15px 10px;
+  }  
+
 /*# sourceMappingURL=custom.css.map */
