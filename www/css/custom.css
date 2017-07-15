@@ -1,7 +1,9 @@
 .login {
   background-color: #FF9A17;
   color: #fff;
-  font-family: sans-serif; }
+  font-family: sans-serif;
+  min-height: 600px;
+  overflow: hidden; }
   .login h1 {
     text-align: center;
     margin-top: 100px; }
@@ -26,6 +28,7 @@
   transform: translate(-50%, -50%);
   width: 300px; }
   .loginContainer input {
+    padding: 6px;
     width: 100%;
     height: 35px;
     border-radius: 4px; }
