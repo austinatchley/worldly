@@ -42,4 +42,9 @@
   height: 100%;
   width: auto; }
 
+.profilePicture {
+  border-radius: 50%;
+  height: 25px;
+  width: auto; }
+
 /*# sourceMappingURL=custom.css.map */
