@@ -80,7 +80,7 @@
                         <div class="content-block">
                             <p>
                                 
-                                <style>
+<style>
   .facebook-card .card-header {
     display: block;
     padding: 10px;
@@ -119,33 +119,38 @@
  
 <div class="card facebook-card">
   <div class="card-header no-border">
-    <div class="facebook-avatar"><img src="mattprofilepic.jpg" width="34" height="34"></div>
+    <div class="facebook-avatar"><img src="img/mattprofilepic.jpg" width="34" height="34"></div>
     <div class="facebook-name">Matt Stanley</div>
     <div class="facebook-date">Monday at 3:47 PM</div>
   </div>
-  <div class="card-content-inner"><p>Planning a trip to Brazil. Best options for food?</p></div>
+  <div class="card-content-inner">
+    <p>Planning a trip to Brazil. Best options for food?</p>
+    <p class="color-gray">Likes: <div class="like-val color-gray" id="like-val0" value=0></div></p>
+    <p class="color-gray">Comments: 2</p>
+  </div>
 
   <div class="card-footer no-border">
-    <a href="#" class="link">Like</a>
+    <a href="#" id="like0">Like</a>
     <a href="#" class="link">Recommend</a>
   </div>
 </div>
  
 <div class="card facebook-card">
   <div class="card-header">
-    <div class="facebook-avatar"><img src="mattprofilepic.jpg" width="34" height="34"></div>
+    <div class="facebook-avatar"><img src="img/mattprofilepic.jpg" width="34" height="34"></div>
     <div class="facebook-name"><b>Matt Stanley</b> was at <b> the Grand Canyon</b></div>
     <div class="facebook-date">Monday at 2:15 PM</div>
   </div>
   <div class="card-content">
     <div class="card-content-inner">
-       <img src="matt.jpg" width="100%">  
-       <p>What a nice photo i took yesterday!</p>
-      <p class="color-gray">Likes: 112    Comments: 43</p>
+        <img src="img/macchupichu.jpg" width="100%">  
+        <p>What a nice photo i took yesterday!</p>
+        <p class="color-gray">Likes: <div class="like-val color-gray" id="like-val1" value=0></div></p>
+        <p class="color-gray">Comments: 4</p>
     </div>
   </div>
   <div class="card-footer">
-    <a href="#" class="link">Like</a>
+    <a href="#" id="like1">Like</a>
     <a href="#" class="link">Comment</a>
     <a href="#" class="link">Add to Wishlist</a>
   </div>
@@ -153,40 +158,50 @@
 
 <div class="card facebook-card">
   <div class="card-header">
-    <div class="facebook-avatar"><img src="austinpropic.jpg" width="34" height="34"></div>
-    <div class="facebook-name"><b>Austin Atchley</b> was at <a href = "#" class ="link" style="display:inline-block;" > Machu Picchu</a></div>
+    <div class="facebook-avatar"><img src="img/austinpropic.jpg" width="34" height="34"></div>
+    <div class="facebook-name"><b>Austin Atchley</b> was at <a href = "#" class ="link" style="display:inline-block;" >Machu Picchu</a></div>
     <div class="facebook-date">Sunday at 3:37 PM</div>
   </div>
   <div class="card-content">
     <div class="card-content-inner">
-       <img src="macchupichu.jpg" width="100%">  
-       <p>10/10 would recommend</p>
-      <p class="color-gray">Likes: 46    Comments: 5</p>
+      <img src="img/macchupichu.jpg" width="100%">  
+      <p>10/10 would recommend</p>
+      <p class="color-gray">Likes: <div class="like-val color-gray" id="like-val2" value=0></div></p>
+      <p class="color-gray">Comments: 5</p>
     </div>
   </div>
   <div class="card-footer">
-    <a href="#" class="link">Like</a>
+    <a href="#" id="like2">Like</a>
     <a href="#" class="link">Comment</a>
     <a href="#" class="link">Add to Wishlist</a>
   </div>
 </div>   
-                            </p>
-                            <!-- Link to another page -->
-                            <a href="about.html">About Travice</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Bottom Toolbar-->
-            <div class="toolbar">
-                <div class="toolbar-inner">
-                    <!-- Toolbar links -->
-                    <a href="#" class="link">Friends</a>
-                    <a href="#" class="link">Settings</a>
-                </div>
-            </div>
-        </div>
+</p>
+<!-- Link to another page -->
+  <a href="about.html">About Travice</a>
+
+<div class="toolbar tabbar tabbar-labels">
+    <div class="toolbar-inner">
+      <a href="#view-1" class="tab-link active">
+        <image src="img/feed.png" class="active"></image>
+        <span class="tabbar-label">Feed</span>
+      </a>
+      <a href="#view-2" class="tab-link">
+        <image src="img/messages.png"></image>
+          <span class="badge bg-red notification">4</span>
+        <span class="tabbar-label">Messages</span>
+      </a>
+      <a href="#view-3" class="tab-link">
+        <image src="img/friends.png"></image>
+        <span class="tabbar-label">Friends</span>
+      </a>
+      <a href="#view-4" class="tab-link">
+        <image src="img/settings.png"></image>
+        <span class="tabbar-label">Settings</span>
+      </a>
     </div>
+  </div>
+</div>
 
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>

@@ -53,11 +53,14 @@
 
 .sign-in {
   color: #000;
-  font-family: sans-serif; }
+  font-family: sans-serif;
+  width:250px;
+  top: 10px;
+  margin: auto; 
+  margin-top: 100px; }
   .sign-in button {
     position: relative;
     top: 10px;
-    left: 50%;
     transform: translateX(-50%);
     width: 250px;
     border-radius: 4px;
@@ -66,4 +69,16 @@
     border: none;
     height: 50px; }
 
+.like-val {
+  display: inline-block;
+  padding-left: 6px; }
+
+.color-gray {
+  display: inline-block; }
+
+.notification {
+  position: absolute;
+  top: -5px;
+  left: 48px;
+}
 /*# sourceMappingURL=custom.css.map */
