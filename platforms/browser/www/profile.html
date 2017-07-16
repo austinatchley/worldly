@@ -21,7 +21,7 @@
     <meta name="msapplication-tap-highlight" content="no">
 
     <!-- Your app title -->
-    <title>Person's Profile</title>
+    <title>worldly</title>
 
     <!-- This template defaults to the iOS CSS theme. To support both iOS and material design themes, see the Framework7 Tutorial at the link below:
         http://www.idangero.us/framework7/tutorials/maintain-both-ios-and-material-themes-in-single-app.html
@@ -58,10 +58,10 @@
         <!-- Your main view, should have "view-main" class -->
         <div class="view view-main">
             <!-- Top Navbar-->
-            <div class="navbar">
+            <div class="navbar" style="background-color:#FF9A17;">
                 <div class="navbar-inner">
                     <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-                    <div class="center sliding">Person's Profile</div>
+                  <div class="center sliding"> <p style="text-align:center; padding-top: 15px"><img src="img/worldly.png" width="50%">  </p></div>
                     <div class="right">
                         <!--
                           Right link contains only icon - additional "icon-only" class
@@ -76,7 +76,10 @@
                 <!-- Page, "data-page" contains page name -->
                 <div data-page="index" class="page">
                     <!-- Scrollable page content -->
-
+                    <div class="page-content">
+                        <div class="content-block">
+                            <p>
+                                
 <style>
   .facebook-card .card-header {
     display: block;
@@ -89,7 +92,10 @@
     margin-left: 44px;
     font-size: 14px;
     color: black;
+
   }
+
+
   .facebook-card .facebook-date {
     margin-left: 44px;
     font-size: 13px;
@@ -110,15 +116,11 @@
   }  
 </style>
 
-                    <div class="page-content">
-
-
-
 
 <div class="content-block">
 <div class="card facebook-card">
   <div class="card-header no-border">
-    <div class="facebook-avatar" style="margin-right: 10px"><img src="mattprofilepic.jpg" width="128" height="128"></div>
+    <div class="facebook-avatar" style="margin-right: 10px"><img src="img/mattprofilepic.jpg" width="128" height="128"></div>
     <p style = "margin-left: 15px" >32/196 countries</p>
     <p>16% world</p>
     <p>#5 out of 50 friends</p>
@@ -138,14 +140,14 @@
 
 <div class="card facebook-card">
 
-  <div class="card-content-inner"><img src="matt.jpg" style="width: 33%; height: 50%"">
-  <img src="matt.jpg" style="width: 33%; ">
-  <img src="matt.jpg" style="width: 33%; ">
+  <div class="card-content-inner"><img src="img/matt.jpg" style="width: 33%; height: 50%"">
+  <img src="img/matt.jpg" style="width: 33%; ">
+  <img src="img/matt.jpg" style="width: 33%; ">
   </div>
 </div>
 </div>
                         <div class="content-block">
-                            <div class="content-block-title">Person's Wishlist</div>
+                            <div class="content-block-title">Matt's Wishlist</div>
  
 <div class="card">
   <div class="card-content">
@@ -180,7 +182,7 @@
   </div>
 </div>
                         <div class="content-block">
-                            <div class="content-block-title">All recommendations</div>
+                            <div class="content-block-title">Matt's recommendations</div>
  
 <div class="card">
   <div class="card-content">
@@ -241,96 +243,99 @@
     </div>
   </div>
 </div>
-                                
+
+
  
-  <div class="content-block-title">Recent Posts</div>
+ 
 <div class="card facebook-card">
   <div class="card-header no-border">
-    <div class="facebook-avatar"><img src="mattprofilepic.jpg" width="34" height="34"></div>
+    <div class="facebook-avatar"><img src="img/mattprofilepic.jpg" width="34" height="34"></div>
     <div class="facebook-name">Matt Stanley</div>
     <div class="facebook-date">Monday at 3:47 PM</div>
   </div>
-  <div class="card-content-inner"><p>Planning a trip to Brazil. Best options for food?</p></div>
+  <div class="card-content-inner">
+    <p>Planning a trip to Brazil. Best options for food?</p>
+    <p class="color-gray">Likes: <div class="like-val color-gray" id="like-val0" value=0></div></p>
+    <p class="color-gray">Comments: 2</p>
+  </div>
+
   <div class="card-footer no-border">
-    <a href="#" class="link">Like</a>
+    <a href="#" id="like0">Like</a>
     <a href="#" class="link">Recommend</a>
   </div>
 </div>
  
 <div class="card facebook-card">
   <div class="card-header">
-    <div class="facebook-avatar"><img src="mattprofilepic.jpg" width="34" height="34"></div>
+    <div class="facebook-avatar"><img src="img/mattprofilepic.jpg" width="34" height="34"></div>
     <div class="facebook-name"><b>Matt Stanley</b> was at <b> the Grand Canyon</b></div>
     <div class="facebook-date">Monday at 2:15 PM</div>
   </div>
   <div class="card-content">
     <div class="card-content-inner">
-       <img src="matt.jpg" width="100%">  
-       <p>What a nice photo i took yesterday!</p>
-      <p class="color-gray">Likes: 112    Comments: 43</p>
+        <img src="img/grandcanyon.jpg" width="100%">  
+        <p>What a nice photo i took yesterday!</p>
+        <p class="color-gray">Likes: <div class="like-val color-gray" id="like-val1" value=0></div></p>
+        <p class="color-gray">Comments: 4</p>
     </div>
   </div>
   <div class="card-footer">
-    <a href="#" class="link">Like</a>
+    <a href="#" id="like1">Like</a>
     <a href="#" class="link">Comment</a>
     <a href="#" class="link">Add to Wishlist</a>
   </div>
 </div> 
+
 <div class="card facebook-card">
   <div class="card-header">
-    <div class="facebook-avatar"><img src="austinpropic.jpg" width="34" height="34"></div>
-    <div class="facebook-name"><b>Austin Atchley</b> was at <a href = "#" class ="link" style="display:inline-block;" > Machu Picchu</a></div>
+    <div class="facebook-avatar"><img src="img/austinpropic.jpg" width="34" height="34"></div>
+    <div class="facebook-name"><b>Austin Atchley</b> was at <a href = "#" class ="link" style="display:inline-block;" >Machu Picchu</a></div>
     <div class="facebook-date">Sunday at 3:37 PM</div>
   </div>
   <div class="card-content">
     <div class="card-content-inner">
-       <img src="macchupichu.jpg" width="100%">  
-       <p>10/10 would recommend</p>
-      <p class="color-gray">Likes: 46    Comments: 5</p>
+      <img src="img/macchupichu.jpg" width="100%">  
+      <p>10/10 would recommend</p>
+      <p class="color-gray">Likes: <div class="like-val color-gray" id="like-val2" value=0></div></p>
+      <p class="color-gray">Comments: 5</p>
     </div>
   </div>
   <div class="card-footer">
-    <a href="#" class="link">Like</a>
+    <a href="#" id="like2">Like</a>
     <a href="#" class="link">Comment</a>
     <a href="#" class="link">Add to Wishlist</a>
   </div>
-  
- 
-                            </p>
-                            <!-- Link to another page -->
-                            <a href="about.html">About Travice</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Bottom Toolbar-->
-            <div class="toolbar">
-                <div class="toolbar-inner">
-                    <!-- Toolbar links -->
-                    <a href="#" class="link">Friends</a>
-                    <a href="#" class="link">Settings</a>
-                </div>
-            </div>
-        </div>
+</div>   
+</p>
+<!-- Link to another page -->
+  <a href="about.html">About worldly</a>
+
+<div class="toolbar tabbar tabbar-labels bottom-bar">
+    <div class="toolbar-inner">
+      <a href="#view-1" class="tab-link active">
+        <image src="img/feed.png" class="active"></image>
+        <span class="tabbar-label">Feed</span>
+      </a>
+      <a href="#view-2" class="tab-link">
+        <image src="img/messages.png"></image>
+          <span class="badge bg-red notification">4</span>
+        <span class="tabbar-label">Messages</span>
+      </a>
+      <a href="#view-3" class="tab-link">
+        <image src="img/friends.png"></image>
+        <span class="tabbar-label">Friends</span>
+      </a>
+      <a href="#view-4" class="tab-link">
+        <image src="img/settings.png"></image>
+        <span class="tabbar-label">Settings</span>
+      </a>
     </div>
-                            <!-- Link to another page -->
-                            <a href="about.html">About Travice</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Bottom Toolbar-->
-            <div class="toolbar">
-                <div class="toolbar-inner">
-                    <!-- Toolbar links -->
-                    <a href="#" class="link">Friends</a>
-                    <a href="#" class="link">Settings</a>
-                </div>
-            </div>
-        </div>
-    </div>
+  </div>
+</div>
+
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
 </body>
+
 </html>
