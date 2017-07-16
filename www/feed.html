@@ -44,12 +44,14 @@
     <!-- Left panel with reveal effect-->
     <div class="panel panel-right panel-reveal">
         <div class="content-block">
-            <img class="profilePicture">
-            <p>Matt<br>
-            32/196 countries<br>
-            16% world<br>
-            Where you've been<br>
-            Want to go</p>
+            
+            <div class="link" style="text-align:center; font-size:20px;">
+            <img src="img/sidprofilepic.jpg" width="125" height="125"><br><br>Welcome, Sid!</div>
+            <p style="text-align:center; font-size:15px">
+            Your Profile<br>
+            Your Wishlist<br>
+            Create Post<br>
+            Log Out</p>
         </div>
     </div>
 
@@ -112,7 +114,7 @@
     display: block;
   }
   .facebook-card .card-content-inner {
-    padding: 15px 10px;
+    padding: 15px 10px 0px;
   }  
 </style>
  
@@ -120,33 +122,55 @@
 <div class="card facebook-card">
   <div class="card-header no-border">
     <div class="facebook-avatar"><img src="img/mattprofilepic.jpg" width="34" height="34"></div>
-    <div class="facebook-name">Matt Stanley</div>
-    <div class="facebook-date">Monday at 3:47 PM</div>
+    <div class="facebook-name"><a href = "profile.html" class ="link" style="display:inline-block;" >Matt Stanley</a></div>
+    <div class="facebook-date">Today at 3:47 PM</div>
   </div>
   <div class="card-content-inner">
-    <p>Planning a trip to Brazil. Best options for food?</p>
-    <p class="color-gray">Likes: <div class="like-val color-gray" id="like-val0" value=0></div></p>
-    <p class="color-gray">Comments: 2</p>
+    <p>Planning a trip to Brazil this fall! What are the best options for authentic restaurants in Rio de Janeiro?</p>
+    <p class="color-gray">Likes: 
+    <div class="like-val color-gray" id="like-val0" value=0 style= "margin-right: 15px">   
+    </div> Comments: 2</p>
   </div>
-
   <div class="card-footer no-border">
     <a href="#" id="like0">Like</a>
     <a href="#" class="link">Recommend</a>
   </div>
 </div>
  
+ <div class="card facebook-card">
+  <div class="card-header">
+    <div class="facebook-avatar"><img src="img/brandonpropic.jpeg" width="34" height="34"></div>
+    <div class="facebook-name"><a href = "#" class ="link" style="display:inline-block;" >Brandon Monsees</a> was at <a href = "#" class ="link" style="display:inline-block;" >the Bahamas</a></div>
+    <div class="facebook-date">Monday at 3:37 AM</div>
+  </div>
+  <div class="card-content">
+    <div class="card-content-inner">
+      <img src="img/cruise.jpeg" width="100%">  
+      <p>On our final night on Carnival Magic, my sister in law walked right into a column. It was probably about 18-24 inches in diameter, so it didn’t come out of nowhere. We looked back when we heard the ‘smack’ of her face plant and crash and shatter of her glass of beer from Red Frog Pub. She was ok, and we had a good laugh. We even have it on video, it’s priceless! I still giggle just thinking about it.</p>
+      <p class="color-gray">Likes: <div class="like-val color-gray" id="like-val2" value=0 style= "margin-right: 15px"></div>Comments: 5</p>
+    </div>
+  </div>
+  <div class="card-footer">
+    <a href="#" id="like2">Like</a>
+    <a href="#" class="link">Comment</a>
+    <a href="#" class="link">Add to Wishlist</a>
+  </div>
+</div>   
+</p>
+
 <div class="card facebook-card">
   <div class="card-header">
     <div class="facebook-avatar"><img src="img/mattprofilepic.jpg" width="34" height="34"></div>
-    <div class="facebook-name"><b>Matt Stanley</b> was at <b> the Grand Canyon</b></div>
+    <div class="facebook-name"><a href = "profile.html" class ="link" style="display:inline-block;" >Matt Stanley</a> was at the <a href = "#" class ="link" style="display:inline-block;" >Grand Canyon</a></div>
     <div class="facebook-date">Monday at 2:15 PM</div>
   </div>
   <div class="card-content">
     <div class="card-content-inner">
         <img src="img/grandcanyon.jpg" width="100%">  
-        <p>What a nice photo i took yesterday!</p>
-        <p class="color-gray">Likes: <div class="like-val color-gray" id="like-val1" value=0></div></p>
-        <p class="color-gray">Comments: 4</p>
+        <p>It was an astonishing reversal of perception. The geologic mystery of the canyon is how the south-trending Colorado River made a sudden turn westward to carve its way, cross-grained, through four plateaus. This is also more or less what happened culturally. Intellectuals cut against existing aesthetics to make a place that looked nothing like pastorals or alpine mountains into a compelling spectacle. Unlike most great features, the Grand Canyon is invisible until you stand on its rim. You aren’t drawn to it as to a river’s source or a mountain’s peak. You have to seek it out, and then cope with its visual revelation. It simply and suddenly is.</p>
+        <p class="color-gray">Likes: 
+          <div class="like-val color-gray" id="like-val1" value=0 style= "margin-right: 15px"></div>Comments: 4</p>
+        
     </div>
   </div>
   <div class="card-footer">
@@ -159,15 +183,14 @@
 <div class="card facebook-card">
   <div class="card-header">
     <div class="facebook-avatar"><img src="img/austinpropic.jpg" width="34" height="34"></div>
-    <div class="facebook-name"><b>Austin Atchley</b> was at <a href = "#" class ="link" style="display:inline-block;" >Machu Picchu</a></div>
+    <div class="facebook-name"><a href = "#" class ="link" style="display:inline-block;" >Austin Atchley</a> was at <a href = "#" class ="link" style="display:inline-block;" >Machu Picchu</a></div>
     <div class="facebook-date">Sunday at 3:37 PM</div>
   </div>
   <div class="card-content">
     <div class="card-content-inner">
       <img src="img/macchupichu.jpg" width="100%">  
       <p>10/10 would recommend</p>
-      <p class="color-gray">Likes: <div class="like-val color-gray" id="like-val2" value=0></div></p>
-      <p class="color-gray">Comments: 5</p>
+      <p class="color-gray">Likes: <div class="like-val color-gray" id="like-val2" value=0 style= "margin-right: 15px"></div>Comments: 5</p>
     </div>
   </div>
   <div class="card-footer">
@@ -178,7 +201,7 @@
 </div>   
 </p>
 <!-- Link to another page -->
- <p style="text-align:right"><a href="about.html">About worldly</a></p>
+ <p style="text-align:left"><a href="about.html">About worldly</a></p>
 
 <div class="toolbar tabbar tabbar-labels bottom-bar">
     <div class="toolbar-inner">

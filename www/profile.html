@@ -21,7 +21,7 @@
     <meta name="msapplication-tap-highlight" content="no">
 
     <!-- Your app title -->
-    <title>worldly</title>
+    <title><p style="text-align:center; padding-top: 15px"><img src="img/worldly.png" width="50%">  </p><</title>
 
     <!-- This template defaults to the iOS CSS theme. To support both iOS and material design themes, see the Framework7 Tutorial at the link below:
         http://www.idangero.us/framework7/tutorials/maintain-both-ios-and-material-themes-in-single-app.html
@@ -44,12 +44,13 @@
     <!-- Left panel with reveal effect-->
     <div class="panel panel-right panel-reveal">
         <div class="content-block">
-            <img class="profilePicture">
-            <p>Matt<br>
-            32/196 countries<br>
-            16% world<br>
-            Where you've been<br>
-            Want to go</p>
+            <div class="link" style="text-align:center; font-size:20px;">
+            <img src="img/sidprofilepic.jpg" width="125" height="125"><br><br>Welcome, Sid!</div>
+            <p style="text-align:center; font-size:15px">
+            Your Profile<br>
+            Your Wishlist<br>
+            Create Post<br>
+            Log Out</p>
         </div>
     </div>
 
@@ -112,7 +113,7 @@
     display: block;
   }
   .facebook-card .card-content-inner {
-    padding: 15px 10px;
+    padding: 15px 10px 0px;
   }  
 </style>
 
@@ -121,10 +122,11 @@
 <div class="card facebook-card">
   <div class="card-header no-border">
     <div class="facebook-avatar" style="margin-right: 10px"><img src="img/mattprofilepic.jpg" width="128" height="128"></div>
-    <p style = "margin-left: 15px" >32/196 countries</p>
-    <p>16% world</p>
-    <p>#5 out of 50 friends</p>
-
+    <div style = "margin-left: 15px" ><b style="font-size:25px">Matt Stanley </b>
+ 	<br> <br>32/196 countries visited
+    <br>16% of world travelled
+    <br>#5 out of 50 friends
+    </div>
   </div>
   </div>
 
@@ -141,8 +143,8 @@
 <div class="card facebook-card">
 
   <div class="card-content-inner"><img src="img/matt.jpg" style="width: 33%; height: 50%"">
-  <img src="img/matt.jpg" style="width: 33%; ">
-  <img src="img/matt.jpg" style="width: 33%; ">
+  <img src="img/sushi.jpg" style="width: 33%; ">
+  <img src="img/tower.jpg" style="width: 33%; ">
   </div>
 </div>
 </div>
@@ -181,6 +183,7 @@
     </div>
   </div>
 </div>
+</div>
                         <div class="content-block">
                             <div class="content-block-title">Matt's recommendations</div>
  
@@ -212,7 +215,7 @@
           </a>
         </li>
         </li>
-      </ul>
+      
                 <a href="#" class="item-link item-content">
             
             <div class="item-inner">
@@ -244,7 +247,8 @@
   </div>
 </div>
 
-
+<div class="content-block">
+<div class="content-block-title">Recent Posts</div>
  
  
 <div class="card facebook-card">
@@ -255,8 +259,7 @@
   </div>
   <div class="card-content-inner">
     <p>Planning a trip to Brazil. Best options for food?</p>
-    <p class="color-gray">Likes: <div class="like-val color-gray" id="like-val0" value=0></div></p>
-    <p class="color-gray">Comments: 2</p>
+    <p class="color-gray">Likes: <div class="like-val color-gray" id="like-val0" value=0 style= "margin-right: 15px"></div>Comments: 2</p>
   </div>
 
   <div class="card-footer no-border">
@@ -275,8 +278,7 @@
     <div class="card-content-inner">
         <img src="img/grandcanyon.jpg" width="100%">  
         <p>What a nice photo i took yesterday!</p>
-        <p class="color-gray">Likes: <div class="like-val color-gray" id="like-val1" value=0></div></p>
-        <p class="color-gray">Comments: 4</p>
+        <p class="color-gray">Likes: <div class="like-val color-gray" id="like-val1" value=0 style= "margin-right: 15px"></div>Comments: 4</p>
     </div>
   </div>
   <div class="card-footer">
@@ -286,27 +288,6 @@
   </div>
 </div> 
 
-<div class="card facebook-card">
-  <div class="card-header">
-    <div class="facebook-avatar"><img src="img/austinpropic.jpg" width="34" height="34"></div>
-    <div class="facebook-name"><b>Austin Atchley</b> was at <a href = "#" class ="link" style="display:inline-block;" >Machu Picchu</a></div>
-    <div class="facebook-date">Sunday at 3:37 PM</div>
-  </div>
-  <div class="card-content">
-    <div class="card-content-inner">
-      <img src="img/macchupichu.jpg" width="100%">  
-      <p>10/10 would recommend</p>
-      <p class="color-gray">Likes: <div class="like-val color-gray" id="like-val2" value=0></div></p>
-      <p class="color-gray">Comments: 5</p>
-    </div>
-  </div>
-  <div class="card-footer">
-    <a href="#" id="like2">Like</a>
-    <a href="#" class="link">Comment</a>
-    <a href="#" class="link">Add to Wishlist</a>
-  </div>
-</div>   
-</p>
 <!-- Link to another page -->
   <a href="about.html">About worldly</a>
 
