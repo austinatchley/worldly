@@ -5,16 +5,11 @@ var $$ = Dom7;
 var myApp = new Framework7({});
  
 // Init View
-var view1 = myApp.addView('#view-1');
-
-var view2 = myApp.addView('#view-2', {
+var view1 = myApp.addView('.view-main', {
     // Don't worry about that Material doesn't support it
     // F7 will just ignore it for Material theme
     dynamicNavbar: true
 });
-
-var view3 = myApp.addView('#view-3');
-var view4 = myApp.addView('#view-4');
 
 var like_val0 = 10, like_val1 = 46, like_val2 = 4;
 

@@ -81,4 +81,9 @@
   top: -5px;
   left: 48px;
 }
+
+.bottom-bar {
+  position: fixed;
+  bottom: 0px;
+}
 /*# sourceMappingURL=custom.css.map */
